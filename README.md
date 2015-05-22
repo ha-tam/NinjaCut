@@ -21,8 +21,6 @@ TO DO -- j'en oublis surement :D
 
 |  |  |
 | ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
 |Game Logic (faire pop les sprites etc...) | la function update de Class/GameScene|
 | |genrer la fin des niveau|
 ||generer d'autre scene (type?)|
