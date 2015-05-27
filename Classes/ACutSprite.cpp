@@ -36,6 +36,8 @@ void ACutSprite::initOptions(PhysicsWorld* physicsWorld,
 	_cut1 = cut1;
 	_cut2 = cut2;
 	_pointValue = pointsValue;
+	_out = false;
+	_enter = false;
 	this->setLocalZOrder(z_Order_Sprite);
 	MyBodyParser::getInstance()->parseJsonFile(path_body);
     auto spriteBody = MyBodyParser::getInstance()->bodyFormJson(this, bodyName, PhysicsMaterial(1, 1, 0));
@@ -76,27 +78,33 @@ void ACutSprite::initPos(e_SpritePath path)
 void ACutSprite::addEvents()
 {
 	touchListener = EventListenerTouchOneByOne::create();
-    touchListener->onTouchBegan = [](Touch* touch, Event* event)->bool{ return true; };
-    touchListener->onTouchEnded = CC_CALLBACK_2(ACutSprite::onTouchEnded, this);
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+//	touchListener->onTouchBegan = [](Touch* touch, Event* event)->bool{ return true; };
+	touchListener->onTouchBegan = CC_CALLBACK_2(ACutSprite::onTouchBegan, this);
+	touchListener->onTouchEnded = CC_CALLBACK_2(ACutSprite::onTouchEnded, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(ACutSprite::onTouchMoved, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 }
 
 void ACutSprite::onTouchEnded(Touch *touch, Event *event)
 {
-	auto func = CC_CALLBACK_3(ACutSprite::slice, this);
-    _PhysicsWorld->rayCast(func, touch->getStartLocation(), touch->getLocation(), nullptr);
-
+	_out = false;
+	_enter = false;
 }
-bool ACutSprite::slice(PhysicsWorld& world, const PhysicsRayCastInfo& info, void* data)
+void ACutSprite::onTouchMoved(Touch *touch, Event *event)
 {
-	if (_deleted == true)
-		return true;
-	if (info.shape->getBody()->getTag() == z_Order_SpriteBomb)
-		LoseLife(1);
-	if (info.shape->getBody()->getTag() != z_Order_Sprite)
-		return true;
-    if (!info.shape->containsPoint(info.start) && !info.shape->containsPoint(info.end))
-    {
+	if (touchSave.getDistance(touch->getLocation()) > 20.0f)
+	{
+		auto current_node = nodeUnderTouch(touch);
+		if (current_node == this)
+			_enter = true;
+		else if (_enter == true)
+			clip();
+		touchSave = touch->getLocation();
+	}
+}
+
+void ACutSprite::clip()
+{
 		CCLOG("%s - %i","Slice Obj Detected !  - ", this);
 		Addpoints(this->_pointValue);
 		_eventDispatcher->removeEventListener(touchListener);
@@ -132,6 +140,37 @@ bool ACutSprite::slice(PhysicsWorld& world, const PhysicsRayCastInfo& info, void
 			sprite->setLocalZOrder(z_Order_SpriteCut);
 			AddChildToScene(sprite);
 		}
+}
+
+
+Node* ACutSprite::nodeUnderTouch(cocos2d::Touch *touch)
+{
+    Node* node = nullptr;
+    auto scene = Director::getInstance()->getRunningScene();
+    auto arr = scene->getPhysicsWorld()->getShapes(touch->getLocation());
+
+    for (auto& obj : arr)
+    {
+		if ( obj->getBody()->getNode() == this)
+        {
+            node = obj->getBody()->getNode();
+            break;
+        }
+    }
+    return node;
+}
+
+bool ACutSprite::onTouchBegan(Touch* touch, Event* event)
+{
+    auto current_node = nodeUnderTouch(touch);
+
+	touchSave = touch->getLocation();
+    if (current_node == nullptr)
+		_out = true;
+	else
+	{
+		_out = true;
+		_enter = true;
 	}
     return true;
 }

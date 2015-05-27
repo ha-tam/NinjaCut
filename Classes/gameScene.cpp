@@ -52,8 +52,8 @@ bool gameLayer::onContactBegin(PhysicsContact& contact)
 
 void gameLayer::update(float dt)
 {
-	cleanSprite();
 
+	cleanSprite();
 //	ADD GAME LOGIC HERE (PUSH SOME SPRITE)
 }
 
