@@ -41,9 +41,13 @@ public:
 	int pointsValue);
 	void initPos(e_SpritePath);
 
-	bool slice(PhysicsWorld& world, const PhysicsRayCastInfo& info, void* data);
+//	bool slice(PhysicsWorld& world, const PhysicsRayCastInfo& info, void* data);
     void addEvents();
-    void onTouchEnded(Touch *touch, Event *event);
+    bool onTouchBegan(Touch *touch, Event *event);
+    void onTouchEnded(Touch *toch, Event *event);
+    void onTouchMoved(Touch *touch, Event *event);
+	Node* nodeUnderTouch(cocos2d::Touch *touch);
+	void clip();
 
 private:
 	PhysicsWorld	*_PhysicsWorld;
@@ -52,6 +56,9 @@ private:
 	int				_pointValue;
 	bool			_deleted;
 	EventListenerTouchOneByOne	*touchListener;
+	Point			touchSave;
+	bool			_out;
+	bool			_enter;
 public:
 
 };
