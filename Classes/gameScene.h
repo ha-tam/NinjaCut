@@ -37,6 +37,7 @@ private:
 	float	_ticClock;
 	float	_ticTimeLimit;
 	int		_waveSize;
+	Label	*_scoreLabel;
 private:
     cocos2d::PhysicsWorld *sceneWorld;
 

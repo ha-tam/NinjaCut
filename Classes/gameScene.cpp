@@ -18,8 +18,8 @@ USING_NS_CC;
 Scene* gameLayer::createScene()
 {
     auto scene = Scene::createWithPhysics();
-    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-    scene->getPhysicsWorld()->setGravity(Point(0, -25.0));
+    //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    scene->getPhysicsWorld()->setGravity(Point(0, -250));
     auto test = new ACutSprite();
     auto layer = gameLayer::create();
     layer->SetPhysicsWorld(scene->getPhysicsWorld());
@@ -39,7 +39,20 @@ void gameLayer::onEnter()
 	_life = 3;
 	_ticClock = 0;
 	_ticTimeLimit = 2;
-	_waveSize = 5;
+	_waveSize = 10;
+
+	auto bg = Sprite::create("bg.png");
+	bg->setAnchorPoint(Point(1, 1));
+	bg->setPosition(Point(1280, 720));
+	addChild(bg);
+
+	_scoreLabel = Label::createWithSystemFont("Score", "Arial", 76);
+	_scoreLabel->enableShadow();
+	_scoreLabel->setAnchorPoint(Point(1, 1));
+	_scoreLabel->setPosition(Point(1260, 720));
+	addChild(_scoreLabel, 5);
+
+	_scoreLabel->setString("fuck lol");
 
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(gameLayer::onContactBegin, this);
@@ -90,10 +103,7 @@ void gameLayer::update(float dt)
 	_ticClock += dt;
 	if (_ticClock >= _ticTimeLimit) {
 		_ticClock = 0;
-		if ((rand() % 2) == 1)
-			throwWave();
-		else
-			throwItem();
+		throwWave();
 	}
 
 }
@@ -142,13 +152,6 @@ void	gameLayer::loseLife(int lose)
 		CCLOG("%s", "END GAME");
 		//Trigger END GAME
 	}
-}
-
-void	gameLayer::throwItem()
-{
-	ACutSprite *sprite = getRandomItem();
-	if (sprite != NULL)
-		addChild(sprite);
 }
 
 void	gameLayer::throwWave()
