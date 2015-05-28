@@ -22,8 +22,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLView::create("Cut It !!!?");
         director->setOpenGLView(glview);
     }
-    glview->setDesignResolutionSize(800,450,ResolutionPolicy::SHOW_ALL);
-	glview->setFrameSize(800,400);
+    glview->setDesignResolutionSize(1280,720,ResolutionPolicy::SHOW_ALL);
+	glview->setFrameSize(1200, 700);
     // turn on display FPS
     director->setDisplayStats(true);
     

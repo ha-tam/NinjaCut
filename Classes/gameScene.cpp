@@ -10,7 +10,7 @@ Scene* gameLayer::createScene()
 {
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-    scene->getPhysicsWorld()->setGravity(Point(0, -20));
+    scene->getPhysicsWorld()->setGravity(Point(0, -25 0));
     auto test = new ACutSprite();
     auto layer = gameLayer::create();
     layer->SetPhysicsWorld(scene->getPhysicsWorld());
@@ -50,10 +50,18 @@ bool gameLayer::onContactBegin(PhysicsContact& contact)
 	return true;
 }
 
+
 void gameLayer::update(float dt)
 {
+	static int indo = 0;
+
 	cleanSprite();
 
+	if ((indo++ % 70) == 0)
+	{
+		auto sprite = Watermelon::create(_scene->getPhysicsWorld());
+		addChild(sprite);
+	}
 //	ADD GAME LOGIC HERE (PUSH SOME SPRITE)
 }
 
