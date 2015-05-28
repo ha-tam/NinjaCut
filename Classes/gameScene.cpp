@@ -1,7 +1,16 @@
 #include "gameScene.h"
 #include "MyBodyParser.h"
-#include "PRKit/PRFilledPolygon.h"
 #include "Watermelon.h"
+#include "BookItem.h"
+#include "Bag.h"
+#include "Candy.h"
+#include "Cat.h"
+#include "Gummy.h"
+#include "Pen.h"
+#include "Potatoes.h"
+#include "StudentBoy.h"
+#include "StudentGirl.h"
+#include "Teacher.h"
 #include "zOrder.h"
 
 USING_NS_CC;
@@ -10,7 +19,7 @@ Scene* gameLayer::createScene()
 {
     auto scene = Scene::createWithPhysics();
     scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-    scene->getPhysicsWorld()->setGravity(Point(0, -25 0));
+    scene->getPhysicsWorld()->setGravity(Point(0, -25.0));
     auto test = new ACutSprite();
     auto layer = gameLayer::create();
     layer->SetPhysicsWorld(scene->getPhysicsWorld());
@@ -28,15 +37,9 @@ void gameLayer::onEnter()
     Layer::onEnter();
 	_score = 0;
 	_life = 3;
-
-//TEST
-	auto sprite = Watermelon::create(_scene->getPhysicsWorld());
-	addChild(sprite);
-	sprite = Watermelon::create(_scene->getPhysicsWorld());
-	sprite->getPhysicsBody()->setVelocity(Vect(0.0,0.0));
-	sprite->setPosition(Point(400.0,400.0));
-	addChild(sprite);
-//END TEST
+	_ticClock = 0;
+	_ticTimeLimit = 2;
+	_waveSize = 5;
 
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(gameLayer::onContactBegin, this);
@@ -53,16 +56,16 @@ bool gameLayer::onContactBegin(PhysicsContact& contact)
 
 void gameLayer::update(float dt)
 {
-	static int indo = 0;
-
 	cleanSprite();
-
-	if ((indo++ % 70) == 0)
-	{
-		auto sprite = Watermelon::create(_scene->getPhysicsWorld());
-		addChild(sprite);
+	_ticClock += dt;
+	if (_ticClock >= _ticTimeLimit) {
+		_ticClock = 0;
+		if ((rand() % 2) == 1)
+			throwWave();
+		else
+			throwItem();
 	}
-//	ADD GAME LOGIC HERE (PUSH SOME SPRITE)
+
 }
 
 void	gameLayer::cleanSprite()
@@ -109,4 +112,42 @@ void	gameLayer::loseLife(int lose)
 		CCLOG("%s", "END GAME");
 		//Trigger END GAME
 	}
+}
+
+void	gameLayer::throwItem()
+{
+	ACutSprite *sprite = getRandomItem();
+	if (sprite != NULL)
+		addChild(sprite);
+}
+
+void	gameLayer::throwWave()
+{
+	int i = 1;
+	while (i <= _waveSize) {
+		ACutSprite *sprite = getRandomItem();
+		if (sprite != NULL) {
+			//sprite->setPosition(Point(0.0 + (100 * i),100.0));
+			addChild(sprite);
+		}
+		i++;
+	}
+}
+
+ACutSprite* gameLayer::getRandomItem() {
+	ACutSprite *sprite = NULL;
+	switch (rand() % 10 + 1) {
+		case 1: sprite = BookItem::create(_scene->getPhysicsWorld()); break;
+		case 2: sprite = Bag::create(_scene->getPhysicsWorld()); break;
+		case 3: sprite = Candy::create(_scene->getPhysicsWorld()); break;
+		case 4: sprite = Cat::create(_scene->getPhysicsWorld()); break;
+		case 5: sprite = Gummy::create(_scene->getPhysicsWorld()); break;
+		case 6: sprite = Pen::create(_scene->getPhysicsWorld()); break;
+		case 7: sprite = Potatoes::create(_scene->getPhysicsWorld()); break;
+		case 8: sprite = StudentBoy::create(_scene->getPhysicsWorld()); break;
+		case 9: sprite = StudentGirl::create(_scene->getPhysicsWorld()); break;
+		case 10: sprite = Teacher::create(_scene->getPhysicsWorld()); break;
+		default: sprite = Watermelon::create(_scene->getPhysicsWorld()); break;
+	}
+	return sprite;
 }

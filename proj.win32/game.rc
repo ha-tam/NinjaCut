@@ -113,10 +113,20 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// json
+// JSON
 //
 
-IDR_JSON2               json                    "..\\Resources\\watermelon.json"
+IDR_JSON2               JSON                    "..\\Resources\\watermelon.json"
+IDR_JSON3               JSON                    "..\\Resources\\BookItem.json"
+IDR_JSON4               JSON                    "..\\Resources\\StudentBoy.json"
+IDR_JSON5               JSON                    "..\\Resources\\StudentGirl.json"
+IDR_JSON6               JSON                    "..\\Resources\\Teacher.json"
+IDR_JSON7               JSON                    "..\\Resources\\Bag.json"
+IDR_JSON8               JSON                    "..\\Resources\\Candy.json"
+IDR_JSON9               JSON                    "..\\Resources\\Cat.json"
+IDR_JSON10              JSON                    "..\\Resources\\Gummy.json"
+IDR_JSON11              JSON                    "..\\Resources\\Pen.json"
+IDR_JSON12              JSON                    "..\\Resources\\Potatoes.json"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -124,6 +134,16 @@ IDR_JSON2               json                    "..\\Resources\\watermelon.json"
 //
 
 IDB_PNG2                PNG                     "..\\Resources\\watermelon.png"
+IDB_PNG3                PNG                     "..\\Resources\\book.png"
+IDB_PNG4                PNG                     "..\\Resources\\student-boy.png"
+IDB_PNG5                PNG                     "..\\Resources\\student-girl.png"
+IDB_PNG6                PNG                     "..\\Resources\\teacher.png"
+IDB_PNG7                PNG                     "..\\Resources\\bag.png"
+IDB_PNG8                PNG                     "..\\Resources\\candy.png"
+IDB_PNG9                PNG                     "..\\Resources\\cat.png"
+IDB_PNG10               PNG                     "..\\Resources\\gummy.png"
+IDB_PNG11               PNG                     "..\\Resources\\pen.png"
+IDB_PNG12               PNG                     "..\\Resources\\potatoes.png"
 #endif    // French (France) resources
 /////////////////////////////////////////////////////////////////////////////
 

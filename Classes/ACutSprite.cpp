@@ -124,17 +124,18 @@ void ACutSprite::onTouchEnded(Touch *touch, Event *event)
 	_out = false;
 	_enter = false;
 }
+
 void ACutSprite::onTouchMoved(Touch *touch, Event *event)
 {
-	if (touchSave.getDistance(touch->getLocation()) > 20.0f)
-	{
+	//if (touchSave.getDistance(touch->getLocation()) > 20.0f)
+	//{
 		auto current_node = nodeUnderTouch(touch);
 		if (current_node == this)
 			_enter = true;
 		else if (_enter == true)
 			clip();
 		touchSave = touch->getLocation();
-	}
+	//}
 }
 
 void ACutSprite::clip()
