@@ -5,6 +5,8 @@
 
 USING_NS_CC;
 
+class ACutSprite;
+
 class gameLayer : public cocos2d::Layer
 {
 public:
@@ -19,6 +21,9 @@ public:
 	void	loseLife(int lose);
 	virtual void	update(float dt);
     bool onContactBegin(PhysicsContact& contact);
+	void	throwItem();
+	void	throwWave();
+	ACutSprite	*getRandomItem();
 
 private:
     int		_sliceTag;
@@ -26,6 +31,9 @@ private:
 	Scene	*_scene;
 	int		_score;
 	int		_life;
+	float	_ticClock;
+	float	_ticTimeLimit;
+	int		_waveSize;
 private:
     cocos2d::PhysicsWorld *sceneWorld;
 

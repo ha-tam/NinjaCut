@@ -135,22 +135,36 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\ACutSprite.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Bag.cpp" />
+    <ClCompile Include="..\Classes\BookItem.cpp" />
+    <ClCompile Include="..\Classes\Candy.cpp" />
+    <ClCompile Include="..\Classes\Cat.cpp" />
     <ClCompile Include="..\Classes\gameScene.cpp" />
+    <ClCompile Include="..\Classes\Gummy.cpp" />
     <ClCompile Include="..\Classes\MyBodyParser.cpp" />
-    <ClCompile Include="..\Classes\PRKit\PRFilledPolygon.cpp" />
-    <ClCompile Include="..\Classes\PRKit\PRRatcliffTriangulator.cpp" />
-    <ClCompile Include="..\Classes\PRKit\triangulate.cpp" />
+    <ClCompile Include="..\Classes\Pen.cpp" />
+    <ClCompile Include="..\Classes\Potatoes.cpp" />
+    <ClCompile Include="..\Classes\StudentBoy.cpp" />
+    <ClCompile Include="..\Classes\StudentGirl.cpp" />
+    <ClCompile Include="..\Classes\Teacher.cpp" />
     <ClCompile Include="..\Classes\Watermelon.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\ACutSprite.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Bag.h" />
+    <ClInclude Include="..\Classes\BookItem.h" />
+    <ClInclude Include="..\Classes\Candy.h" />
+    <ClInclude Include="..\Classes\Cat.h" />
     <ClInclude Include="..\Classes\gameScene.h" />
+    <ClInclude Include="..\Classes\Gummy.h" />
     <ClInclude Include="..\Classes\MyBodyParser.h" />
-    <ClInclude Include="..\Classes\PRKit\PRFilledPolygon.h" />
-    <ClInclude Include="..\Classes\PRKit\PRRatcliffTriangulator.h" />
-    <ClInclude Include="..\Classes\PRKit\triangulate.h" />
+    <ClInclude Include="..\Classes\Pen.h" />
+    <ClInclude Include="..\Classes\Potatoes.h" />
+    <ClInclude Include="..\Classes\StudentBoy.h" />
+    <ClInclude Include="..\Classes\StudentGirl.h" />
+    <ClInclude Include="..\Classes\Teacher.h" />
     <ClInclude Include="..\Classes\Watermelon.h" />
     <ClInclude Include="..\Classes\zOrder.h" />
     <ClInclude Include="main.h" />
@@ -172,10 +186,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ResourceCompile Include="game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Resources\book.png" />
     <Image Include="..\Resources\watermelon.png" />
     <Image Include="res\game.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Resources\BookItem.json" />
     <None Include="..\Resources\watermelon.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

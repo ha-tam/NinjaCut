@@ -10,9 +10,6 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\PRKit">
-      <UniqueIdentifier>{d109911b-bb39-443f-b161-15c7e30850a3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\ObjCut">
       <UniqueIdentifier>{b29ece3b-ea4b-4167-9b6c-0aebc1601f23}</UniqueIdentifier>
     </Filter>
@@ -23,15 +20,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PRKit\PRFilledPolygon.cpp">
-      <Filter>Classes\PRKit</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PRKit\PRRatcliffTriangulator.cpp">
-      <Filter>Classes\PRKit</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PRKit\triangulate.cpp">
-      <Filter>Classes\PRKit</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\gameScene.cpp">
       <Filter>Classes</Filter>
@@ -45,6 +33,36 @@
     <ClCompile Include="..\Classes\Watermelon.cpp">
       <Filter>Classes\ObjCut</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Candy.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Cat.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Bag.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BookItem.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Potatoes.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StudentBoy.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StudentGirl.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Teacher.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Gummy.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Pen.cpp">
+      <Filter>Classes\ObjCut</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -52,15 +70,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PRKit\PRFilledPolygon.h">
-      <Filter>Classes\PRKit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PRKit\PRRatcliffTriangulator.h">
-      <Filter>Classes\PRKit</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PRKit\triangulate.h">
-      <Filter>Classes\PRKit</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\gameScene.h">
       <Filter>Classes</Filter>
@@ -80,6 +89,36 @@
     <ClInclude Include="..\Classes\Watermelon.h">
       <Filter>Classes\ObjCut</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\BookItem.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Candy.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Cat.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Bag.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pen.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Potatoes.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StudentBoy.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StudentGirl.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Teacher.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Gummy.h">
+      <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
@@ -91,10 +130,12 @@
     <Image Include="..\Resources\watermelon.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\book.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\watermelon.json">
       <Filter>resource</Filter>
     </None>
+    <None Include="..\Resources\BookItem.json" />
   </ItemGroup>
 </Project>
