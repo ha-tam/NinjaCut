@@ -26,7 +26,7 @@ public:
 	};
 
 public:
-	
+
 	ACutSprite(void);
 	virtual ~ACutSprite(void);
 
@@ -40,13 +40,6 @@ public:
 	const string &path_body, const string &bodyName,
 	int pointsValue);
 	void initPos(e_SpritePath);
-
-//	bool slice(PhysicsWorld& world, const PhysicsRayCastInfo& info, void* data);
-    void addEvents();
-    bool onTouchBegan(Touch *touch, Event *event);
-    void onTouchEnded(Touch *toch, Event *event);
-    void onTouchMoved(Touch *touch, Event *event);
-	Node* nodeUnderTouch(cocos2d::Touch *touch);
 	void clip();
 
 private:
@@ -55,12 +48,6 @@ private:
 	string			_cut2;
 	int				_pointValue;
 	bool			_deleted;
-	EventListenerTouchOneByOne	*touchListener;
-	Point			touchSave;
-	bool			_out;
-	bool			_enter;
-public:
-
 };
 
 #endif

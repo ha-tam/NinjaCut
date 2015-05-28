@@ -13,7 +13,6 @@ Gummy* Gummy::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "gummy1.png", "gummy2.png", "Gummy.json", "Gummy", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

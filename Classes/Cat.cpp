@@ -13,7 +13,6 @@ Cat* Cat::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "cat1.png", "cat2.png", "Cat.json", "Cat", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

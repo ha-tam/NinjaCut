@@ -1,17 +1,17 @@
-﻿Build started 28/05/2015 02:21:04.
-     1>Project "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\cocos2d.vcxproj" on node 2 (Build target(s)).
+﻿Build started 29/05/2015 01:58:21.
+     1>Project "D:\Project\NinjaCut\cocos2d\cocos\2d\cocos2d.vcxproj" on node 2 (Build target(s)).
      1>PreLinkEvent:
-         if not exist "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\" mkdir "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\freetype2\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\glfw3\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\curl\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\jpeg\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\png\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\tiff\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\webp\prebuilt\win32\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\zlib\prebuilt\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\icon\prebuilt\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
-         xcopy /Y /Q "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\gles\prebuilt\*.*" "C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\"
+         if not exist "D:\Project\NinjaCut\proj.win32\Debug.win32\" mkdir "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\freetype2\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\glfw3\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\curl\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\jpeg\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\png\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\tiff\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\webp\prebuilt\win32\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\zlib\prebuilt\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\icon\prebuilt\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
+         xcopy /Y /Q "D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\gles\prebuilt\*.*" "D:\Project\NinjaCut\proj.win32\Debug.win32\"
          
          :VCEnd
          1 fichier(s) copié(s)
@@ -25,9 +25,9 @@
          2 fichier(s) copié(s)
          2 fichier(s) copié(s)
        Lib:
-         cocos2d.vcxproj -> C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\libcocos2d.lib
-     1>Done Building Project "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\cocos2d.vcxproj" (Build target(s)).
+         cocos2d.vcxproj -> D:\Project\NinjaCut\proj.win32\Debug.win32\libcocos2d.lib
+     1>Done Building Project "D:\Project\NinjaCut\cocos2d\cocos\2d\cocos2d.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.21
+Time Elapsed 00:00:00.25

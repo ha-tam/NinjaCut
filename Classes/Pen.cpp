@@ -13,7 +13,6 @@ Pen* Pen::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "pen1.png", "pen2.png", "Pen.json", "Pen", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

@@ -13,7 +13,6 @@ Potatoes* Potatoes::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "potatoes1.png", "potatoes2.png", "Potatoes.json", "Potatoes", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

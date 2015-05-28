@@ -13,7 +13,6 @@ Bag* Bag::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "bag1.png", "bag2.png", "Bag.json", "Bag", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

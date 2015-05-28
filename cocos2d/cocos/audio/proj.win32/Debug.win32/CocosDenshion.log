@@ -1,23 +1,15 @@
-﻿Build started 24/05/2015 02:43:28.
-     1>Project "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" on node 3 (Build target(s)).
+﻿Build started 29/05/2015 00:57:19.
+     1>Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio Community 2013\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include" /I..\Include /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\renderer /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\ui /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\base /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\physics /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\math\kazmath /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\win32 /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\desktop /IC:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4251 /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
+         D:\Software\Visual Studio 2012\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include" /I..\Include /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\renderer /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\ui /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\base /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\physics /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\math\kazmath /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\win32 /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\desktop /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4251 /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
          MciPlayer.cpp
          SimpleAudioEngine.cpp
-     1>c:\program files (x86)\microsoft sdks\windows\v7.1a\include\sal_supp.h(57): warning C4005: '__useHeader' : macro redefinition (..\win32\MciPlayer.cpp)
-                 c:\program files (x86)\microsoft visual studio community 2013\vc\include\sal.h(2886) : see previous definition of '__useHeader'
-     1>c:\program files (x86)\microsoft sdks\windows\v7.1a\include\specstrings_supp.h(77): warning C4005: '__on_failure' : macro redefinition (..\win32\MciPlayer.cpp)
-                 c:\program files (x86)\microsoft visual studio community 2013\vc\include\sal.h(2896) : see previous definition of '__on_failure'
-     1>c:\program files (x86)\microsoft sdks\windows\v7.1a\include\sal_supp.h(57): warning C4005: '__useHeader' : macro redefinition (..\win32\SimpleAudioEngine.cpp)
-                 c:\program files (x86)\microsoft visual studio community 2013\vc\include\sal.h(2886) : see previous definition of '__useHeader'
-     1>c:\program files (x86)\microsoft sdks\windows\v7.1a\include\specstrings_supp.h(77): warning C4005: '__on_failure' : macro redefinition (..\win32\SimpleAudioEngine.cpp)
-                 c:\program files (x86)\microsoft visual studio community 2013\vc\include\sal.h(2896) : see previous definition of '__on_failure'
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio Community 2013\VC\bin\Lib.exe /OUT:"C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\libAudio.lib" /NOLOGO Debug.win32\MciPlayer.obj
+         D:\Software\Visual Studio 2012\VC\bin\Lib.exe /OUT:"D:\Project\NinjaCut\proj.win32\Debug.win32\libAudio.lib" /NOLOGO Debug.win32\MciPlayer.obj
          Debug.win32\SimpleAudioEngine.obj
-         CocosDenshion.vcxproj -> C:\Users\Don\Documents\GitHub\NinjaCut\proj.win32\Debug.win32\libAudio.lib
-     1>Done Building Project "C:\Users\Don\Documents\GitHub\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" (Build target(s)).
+         CocosDenshion.vcxproj -> D:\Project\NinjaCut\proj.win32\Debug.win32\libAudio.lib
+     1>Done Building Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:01:05.40
+Time Elapsed 00:01:17.33

@@ -13,7 +13,6 @@ BookItem* BookItem::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "exam-sheet.png", "exam-sheet.png", "BookItem.json", "BookItem", 1);
-		pSprite->addEvents();
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

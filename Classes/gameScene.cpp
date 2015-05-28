@@ -44,7 +44,10 @@ void gameLayer::onEnter()
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(gameLayer::onContactBegin, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
-
+	auto touchListener = EventListenerTouchOneByOne::create();
+	touchListener->onTouchBegan = CC_CALLBACK_2(gameLayer::onTouchBegan, this);
+	touchListener->onTouchMoved = CC_CALLBACK_2(gameLayer::onTouchMoved, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 	scheduleUpdate();
 }
 
@@ -53,6 +56,33 @@ bool gameLayer::onContactBegin(PhysicsContact& contact)
 	return true;
 }
 
+void gameLayer::nodeUnderTouch(cocos2d::Touch *touch)
+{
+    Node* node = nullptr;
+    auto scene = Director::getInstance()->getRunningScene();
+    auto arr = scene->getPhysicsWorld()->getShapes(touch->getLocation());
+	ACutSprite *sprite;
+    for (auto& obj : arr)
+    {
+		sprite = dynamic_cast<ACutSprite*>(obj->getBody()->getNode());
+		if ( sprite != nullptr)
+        {
+			sprite->clip();
+			break;
+        }
+    }
+}
+
+bool gameLayer::onTouchBegan(Touch* touch, Event* event)
+{
+    nodeUnderTouch(touch);
+    return true;
+}
+
+void gameLayer::onTouchMoved(Touch *touch, Event *event)
+{
+    nodeUnderTouch(touch);
+}
 
 void gameLayer::update(float dt)
 {
