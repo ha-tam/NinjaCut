@@ -61,43 +61,36 @@ void ACutSprite::initPos(e_SpritePath path)
 		this->setPosition(200, 0); // X, Y
 		this->getPhysicsBody()->setVelocity(Vect(100,500)); //longueur, hauteur max
 		this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f))); //Rotate speed
-		CCLOG("0");
 		break;
 	  case 1: // higher, right to left
 		this->setPosition(1200, 50);
 		this->getPhysicsBody()->setVelocity(Vect(-200, 450));
 		this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
-		CCLOG("1");
 		break;
 	  case 2: // candle
 		  this->setPosition(550, 0);
 		  this->getPhysicsBody()->setVelocity(Vect(50, 500));
 		  this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
-		  CCLOG("2");
 		  break;
 	  case 3: //random high
 		  this->setPosition(100 + rand() % 500 , rand() % 30);
 		  this->getPhysicsBody()->setVelocity(Vect(50 + rand() % 300, 300 + rand() % 300));
 		  this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
-		  CCLOG("3");
 		  break;
 	  case 4: // left, middle high, random
 		  this->setPosition(700, 50);
 		  this->getPhysicsBody()->setVelocity(Vect(-300 + rand() % 200, 200 + rand() % 300));
 		  this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
-		  CCLOG("4");
 		  break;
 	  case 5:
 		  this->setPosition(0, 300);
 		  this->getPhysicsBody()->setVelocity(Vect(500, 200));
 		  this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
-		  CCLOG("5");
 		  break;
 		 //...
 	  default:
 	  	this->setPosition(0, 0);
 		this->getPhysicsBody()->setVelocity(Vect(0, 0));
-		CCLOG("Random");
 	}
 }
 
@@ -107,7 +100,13 @@ void ACutSprite::clip()
 		return;
 	CCLOG("%s - %i","Slice Obj Detected !  - ", this);
 	_deleted = true;
-	Addpoints(this->_pointValue);
+	if (this->getLocalZOrder() == z_Order_SpriteBomb)
+	{
+			CCLOG("%s - %i","BOMB CUT  - ", this);
+		LoseLife(1);
+	}
+	else
+		Addpoints(this->_pointValue);
 	this->setOpacity(0);
 	this->setLocalZOrder(z_Order_SpriteCut);
 	auto body = this->getPhysicsBody();
@@ -118,6 +117,7 @@ void ACutSprite::clip()
 		spriteBody->setVelocity(body->getVelocity() * 0.9);
 		spriteBody->setAngularVelocity(body->getAngularVelocity() * 0.9);
 		sprite->setPhysicsBody(spriteBody);
+		sprite->setOpacity(90);
 		sprite->getPhysicsBody()->setTag(z_Order_SpriteCut);
 		sprite->getPhysicsBody()->setCategoryBitmask(0x02);    // 0010
 		sprite->getPhysicsBody()->setContactTestBitmask(0x08); // 1000
@@ -132,6 +132,7 @@ void ACutSprite::clip()
 		spriteBody->setVelocity(body->getVelocity() * 1.1);
 		spriteBody->setAngularVelocity(body->getAngularVelocity() * 1.1);
 		sprite->setPhysicsBody(spriteBody);
+		sprite->setOpacity(90);
 		sprite->getPhysicsBody()->setTag(z_Order_SpriteCut);
 		sprite->getPhysicsBody()->setCategoryBitmask(0x02);    // 0010
 		sprite->getPhysicsBody()->setContactTestBitmask(0x08); // 1000

@@ -13,6 +13,7 @@ typedef std::function<void(Node*)>	addChild_callBack;
 extern addScore_callBack Addpoints;
 extern addScore_callBack LoseLife;
 extern addChild_callBack AddChildToScene;
+
 class ACutSprite : public Sprite
 {
 public:
@@ -35,7 +36,7 @@ public:
 		const string &path_body, const string &bodyName,
 		int pointsValue);
 
-    void initOptions(PhysicsWorld* physicsWorld,
+    virtual void initOptions(PhysicsWorld* physicsWorld,
 	const string &cut1, const string &cut2,
 	const string &path_body, const string &bodyName,
 	int pointsValue);

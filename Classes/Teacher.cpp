@@ -1,5 +1,6 @@
 #include "Teacher.h"
 #include "gameScene.h"
+#include "zOrder.h"
 
 Teacher::Teacher(void) {}
 
@@ -17,4 +18,13 @@ Teacher* Teacher::create(PhysicsWorld* physicsWorld)
 	}
 	CC_SAFE_DELETE(pSprite);
 	return NULL;
+}
+void Teacher::initOptions(PhysicsWorld* physicsWorld,
+	const string &cut1, const string &cut2,
+	const string &path_body, const string &bodyName,
+	int pointsValue)
+{
+	ACutSprite::initOptions(physicsWorld, cut1, cut2, path_body, bodyName, pointsValue);
+	this->getPhysicsBody()->setTag(z_Order_SpriteBomb);
+	this->setLocalZOrder(z_Order_SpriteBomb);
 }

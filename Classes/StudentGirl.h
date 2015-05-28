@@ -11,6 +11,10 @@ public:
 	StudentGirl(void);
 	virtual ~StudentGirl(void);
 	static StudentGirl* create(PhysicsWorld* physicsWorld);
+	virtual void initOptions(PhysicsWorld* physicsWorld,
+	const string &cut1, const string &cut2,
+	const string &path_body, const string &bodyName,
+	int pointsValue);
 };
 
 #endif

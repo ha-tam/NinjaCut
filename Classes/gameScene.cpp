@@ -12,8 +12,9 @@
 #include "StudentGirl.h"
 #include "Teacher.h"
 #include "zOrder.h"
-
+#include <sstream>
 USING_NS_CC;
+int __SpriteFall = 1;
 
 Scene* gameLayer::createScene()
 {
@@ -35,8 +36,8 @@ Scene* gameLayer::createScene()
 void gameLayer::onEnter()
 {
     Layer::onEnter();
-	_score = 0;
-	_life = 3;
+	_score = 100;
+	_life = 5;
 	_ticClock = 0;
 	_ticTimeLimit = 2;
 	_waveSize = 10;
@@ -46,13 +47,17 @@ void gameLayer::onEnter()
 	bg->setPosition(Point(1280, 720));
 	addChild(bg);
 
-	_scoreLabel = Label::createWithSystemFont("Score", "Arial", 76);
+	_scoreLabel = Label::createWithSystemFont("Score : 0", "Arial", 76);
 	_scoreLabel->enableShadow();
 	_scoreLabel->setAnchorPoint(Point(1, 1));
 	_scoreLabel->setPosition(Point(1260, 720));
-	addChild(_scoreLabel, 5);
+	addChild(_scoreLabel, z_Order_UI);
 
-	_scoreLabel->setString("fuck lol");
+	_lifeLabel = Label::createWithSystemFont("Life : 5", "Arial", 76);
+	_lifeLabel->enableShadow();
+	_lifeLabel->setAnchorPoint(Point(0, 1));
+	_lifeLabel->setPosition(Point(0, 720));
+	addChild(_lifeLabel, z_Order_UI);
 
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(gameLayer::onContactBegin, this);
@@ -120,9 +125,7 @@ void	gameLayer::cleanSprite()
             if (position.y < -100.0f || position.x < -100.0f)
             {
                 if (sprite->getLocalZOrder() == z_Order_Sprite)
-                {
-					loseLife(1);
-                }
+					modifScore(-__SpriteFall);
 				_scene->getPhysicsWorld()->removeBody(sprite->getPhysicsBody());
 				sprite->removeFromParentAndCleanup(true);
 				return;
@@ -131,14 +134,22 @@ void	gameLayer::cleanSprite()
     }
 }
 
-void	gameLayer::modifScore(int ScoreModifier)
-{
-	_score += ScoreModifier;
-}
-
 void	gameLayer::add_child(Node* node)
 {
 	addChild(node);
+}
+
+void	gameLayer::modifScore(int ScoreModifier)
+{
+	_score += ScoreModifier;
+	std::stringstream  label;
+	label << "Score : " << _score;
+	_scoreLabel->setString(label.str());
+	if (_score >= 0)
+	{
+		CCLOG("%s", "END GAME");
+		//Trigger END GAME
+	}
 }
 
 void	gameLayer::loseLife(int lose)
@@ -146,6 +157,10 @@ void	gameLayer::loseLife(int lose)
 	if (lose == 0)
 		return;
 	this->_life -= lose;
+	std::stringstream  label;
+	label << "Life : " << _life;
+	_lifeLabel->setString(label.str());
+
 	CCLOG("Life : %i, lost : %i", _life, lose);
 	if (_life == 0)
 	{
