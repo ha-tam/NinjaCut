@@ -42,6 +42,7 @@ public:
 	int pointsValue);
 	void initPos(e_SpritePath);
 	void clip();
+	void musicload(const string &msc);
 
 private:
 	PhysicsWorld	*_PhysicsWorld;
@@ -49,6 +50,7 @@ private:
 	string			_cut2;
 	int				_pointValue;
 	bool			_deleted;
+	string			_music;
 };
 
 #endif

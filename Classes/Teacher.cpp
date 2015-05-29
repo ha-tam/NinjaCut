@@ -14,6 +14,7 @@ Teacher* Teacher::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "watermelon1.png", "watermelon2.png", "Teacher.json", "Teacher", 1);
+		pSprite->musicload("kya.wav");
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);

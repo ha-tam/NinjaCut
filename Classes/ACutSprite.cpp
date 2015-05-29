@@ -2,6 +2,7 @@
 #include "gameScene.h"
 #include "MyBodyParser.h"
 #include "zOrder.h"
+#include "SimpleAudioEngine.h"
 #include <iostream>
 
 addScore_callBack Addpoints;
@@ -36,6 +37,8 @@ void ACutSprite::initOptions(PhysicsWorld* physicsWorld,
 	_cut1 = cut1;
 	_cut2 = cut2;
 	_pointValue = pointsValue;
+	_music = "cut01.mp3";
+
 	this->setLocalZOrder(z_Order_Sprite);
 	MyBodyParser::getInstance()->parseJsonFile(path_body);
     auto spriteBody = MyBodyParser::getInstance()->bodyFormJson(this, bodyName, PhysicsMaterial(1, 1, 0));
@@ -51,6 +54,11 @@ void ACutSprite::initOptions(PhysicsWorld* physicsWorld,
 		auto rd = rand()%6;
 		initPos(e_SpritePath(rd));
     }
+}
+
+void ACutSprite::musicload(const string &msc)
+{
+	_music = msc;
 }
 
 void ACutSprite::initPos(e_SpritePath path)
@@ -84,7 +92,7 @@ void ACutSprite::initPos(e_SpritePath path)
 		  break;
 	  case 5:
 		  this->setPosition(0, 300);
-		  this->getPhysicsBody()->setVelocity(Vect(500, 200));
+		  this->getPhysicsBody()->setVelocity(Vect(300, 200));
 		  this->getPhysicsBody()->setAngularVelocity(1.1f + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / 5.0f)));
 		  break;
 		 //...
@@ -107,6 +115,12 @@ void ACutSprite::clip()
 	}
 	else
 		Addpoints(this->_pointValue);
+
+	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+
+	// play a sound effect, just once.
+	audio->playEffect(_music.c_str(), false, 1.0f, 1.0f, 1.0f);
+
 	this->setOpacity(0);
 	this->setLocalZOrder(z_Order_SpriteCut);
 	auto body = this->getPhysicsBody();

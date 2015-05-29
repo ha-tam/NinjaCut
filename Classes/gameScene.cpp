@@ -13,6 +13,7 @@
 #include "Teacher.h"
 #include "zOrder.h"
 #include <sstream>
+#include "SimpleAudioEngine.h"
 USING_NS_CC;
 int __SpriteFall = 1;
 
@@ -39,8 +40,15 @@ void gameLayer::onEnter()
 	_score = 100;
 	_life = 5;
 	_ticClock = 0;
-	_ticTimeLimit = 2;
-	_waveSize = 10;
+	_ticTimeLimit = 4;
+	_waveSize = 3+rand()%5;
+
+	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+	audio->preloadBackgroundMusic("macicbg.wav");
+
+	// set the background music and continuously play it.
+	audio->playBackgroundMusic("macicbg.wav", true);
+	audio->setBackgroundMusicVolume(0.3);
 
 	auto bg = Sprite::create("bg.png");
 	bg->setAnchorPoint(Point(1, 1));

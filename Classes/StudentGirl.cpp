@@ -14,6 +14,7 @@ StudentGirl* StudentGirl::create(PhysicsWorld* physicsWorld)
 	{
 		pSprite->autorelease();
 		pSprite->initOptions(physicsWorld, "watermelon1.png", "watermelon2.png", "StudentGirl.json", "StudentGirl", 1);
+		pSprite->musicload("kya.wav");
 		return pSprite;
 	}
 	CC_SAFE_DELETE(pSprite);
