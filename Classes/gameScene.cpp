@@ -49,7 +49,9 @@ void gameLayer::onEnter()
 
 	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
 	audio->preloadBackgroundMusic("macicbg.wav");
-
+	audio->preloadEffect("cut01.mp3");
+	audio->preloadEffect("argh.wav");
+	audio->preloadEffect("kya.wav");
 	// set the background music and continuously play it.
 	audio->playBackgroundMusic("macicbg.wav", true);
 	audio->setBackgroundMusicVolume(0.3);
