@@ -1,15 +1,11 @@
-﻿Build started 29/05/2015 00:57:19.
-     1>Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" on node 2 (Rebuild target(s)).
-     1>ClCompile:
-         D:\Software\Visual Studio 2012\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include" /I..\Include /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\renderer /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\ui /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\base /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\physics /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\math\kazmath /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\win32 /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\cocos\2d\platform\desktop /ID:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"D:\Project\NinjaCut\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4251 /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
-         MciPlayer.cpp
-         SimpleAudioEngine.cpp
-       Lib:
+﻿Build started 30/05/2015 01:29:59.
+     1>Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" on node 3 (Build target(s)).
+     1>Lib:
          D:\Software\Visual Studio 2012\VC\bin\Lib.exe /OUT:"D:\Project\NinjaCut\proj.win32\Debug.win32\libAudio.lib" /NOLOGO Debug.win32\MciPlayer.obj
          Debug.win32\SimpleAudioEngine.obj
          CocosDenshion.vcxproj -> D:\Project\NinjaCut\proj.win32\Debug.win32\libAudio.lib
-     1>Done Building Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Project\NinjaCut\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:01:17.33
+Time Elapsed 00:00:00.22

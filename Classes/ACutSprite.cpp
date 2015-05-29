@@ -125,7 +125,7 @@ void ACutSprite::clip()
 		auto sprite = Sprite::create(_cut1);
 		sprite->setPosition(this->getPosition());
 		auto spriteBody = PhysicsBody::createBox(sprite->getContentSize(), PhysicsMaterial(0, 1, 0));
-		spriteBody->setVelocity(body->getVelocity() * 0.9);
+		spriteBody->setVelocity(body->getVelocity() * 0.7);
 		spriteBody->setAngularVelocity(body->getAngularVelocity() * 0.9);
 		sprite->setPhysicsBody(spriteBody);
 		sprite->setOpacity(90);
@@ -140,7 +140,7 @@ void ACutSprite::clip()
 		auto sprite = Sprite::create(_cut2);
 		sprite->setPosition(this->getPosition());
 		auto spriteBody = PhysicsBody::createBox(sprite->getContentSize(), PhysicsMaterial(0, 1, 0));
-		spriteBody->setVelocity(body->getVelocity() * 1.1);
+		spriteBody->setVelocity(body->getVelocity() * 1.3);
 		spriteBody->setAngularVelocity(body->getAngularVelocity() * 1.1);
 		sprite->setPhysicsBody(spriteBody);
 		sprite->setOpacity(90);
