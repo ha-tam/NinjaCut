@@ -8,8 +8,21 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
-
+                   ../../Classes/gameScene.cpp \
+                   ../../Classes/MyBodyParser.cpp \
+                   ../../Classes/Watermelon.cpp \
+                   ../../Classes/ACutSprite.cpp \
+                   ../../Classes/BookItem.cpp \
+                   ../../Classes/Bag.cpp \
+                   ../../Classes/Candy.cpp \
+                   ../../Classes/Cat.cpp \
+                   ../../Classes/Gummy.cpp \
+                   ../../Classes/Pen.cpp \
+                   ../../Classes/Potatoes.cpp \
+                   ../../Classes/StudentBoy.cpp \
+                   ../../Classes/StudentGirl.cpp \
+                   ../../Classes/Teacher.cpp
+				   
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
 LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static

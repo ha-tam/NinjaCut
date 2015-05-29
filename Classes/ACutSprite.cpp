@@ -106,18 +106,15 @@ void ACutSprite::clip()
 {
 	if (_deleted == true)
 		return;
-	CCLOG("%s - %i","Slice Obj Detected !  - ", this);
 	_deleted = true;
 	if (this->getLocalZOrder() == z_Order_SpriteBomb)
 	{
-			CCLOG("%s - %i","BOMB CUT  - ", this);
 		LoseLife(1);
 	}
 	else
 		Addpoints(this->_pointValue);
 
 	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-
 	// play a sound effect, just once.
 	audio->playEffect(_music.c_str(), false, 1.0f, 1.0f, 1.0f);
 

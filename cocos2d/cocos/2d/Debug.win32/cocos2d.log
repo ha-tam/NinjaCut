@@ -1,4 +1,4 @@
-﻿Build started 29/05/2015 03:39:15.
+﻿Build started 30/05/2015 01:08:49.
      1>Project "D:\Project\NinjaCut\cocos2d\cocos\2d\cocos2d.vcxproj" on node 2 (Build target(s)).
      1>PreLinkEvent:
          if not exist "D:\Project\NinjaCut\proj.win32\Debug.win32\" mkdir "D:\Project\NinjaCut\proj.win32\Debug.win32\"
@@ -30,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.26
+Time Elapsed 00:00:00.23

@@ -15,6 +15,10 @@
 #include <sstream>
 #include "SimpleAudioEngine.h"
 USING_NS_CC;
+
+#define MOTION_STREAK_TAG 4242
+
+
 int __SpriteFall = 1;
 
 Scene* gameLayer::createScene()
@@ -49,7 +53,8 @@ void gameLayer::onEnter()
 	// set the background music and continuously play it.
 	audio->playBackgroundMusic("macicbg.wav", true);
 	audio->setBackgroundMusicVolume(0.3);
-
+	m_iCount = 0;
+	MotionStreak::create(0.5f, 1, 10, ccc3(255,255,0), "Line.png");
 	auto bg = Sprite::create("bg.png");
 	bg->setAnchorPoint(Point(1, 1));
 	bg->setPosition(Point(1280, 720));
@@ -77,6 +82,26 @@ void gameLayer::onEnter()
 	scheduleUpdate();
 }
 
+
+void gameLayer::resetMotionStreak() {
+    this->removeChildByTag(MOTION_STREAK_TAG, true);
+    CCMotionStreak* streak = MotionStreak::create(0.5f, 1, 10, ccc3(255, 255, 0), "line.png");
+    this->addChild(streak, 5, MOTION_STREAK_TAG);
+}
+
+void gameLayer::addMotionStreakPoint(cocos2d::CCPoint point) {
+    MotionStreak* streak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
+    streak->setPosition(point);
+    
+    if (++m_iCount>100) {
+        int r = rand()%256;
+        int b = rand()%265;
+        int g = rand()%256;
+        streak->setColor(ccc3(r, b, g));
+        m_iCount = 0;
+    }
+}
+
 bool gameLayer::onContactBegin(PhysicsContact& contact)
 {
 	return true;
@@ -102,12 +127,17 @@ void gameLayer::nodeUnderTouch(cocos2d::Touch *touch)
 bool gameLayer::onTouchBegan(Touch* touch, Event* event)
 {
     nodeUnderTouch(touch);
+    this->resetMotionStreak();
+    Point point = this->convertTouchToNodeSpace(touch);
+    this->addMotionStreakPoint(point);
     return true;
 }
 
 void gameLayer::onTouchMoved(Touch *touch, Event *event)
 {
     nodeUnderTouch(touch);
+    Point point = this->convertTouchToNodeSpace(touch);
+    this->addMotionStreakPoint(point);
 }
 
 void gameLayer::update(float dt)
