@@ -126,16 +126,79 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\game.ico" />
     <Image Include="..\Resources\watermelon.png">
       <Filter>resource</Filter>
     </Image>
-    <Image Include="..\Resources\book.png" />
+    <Image Include="..\Resources\bag.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\book.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\candy.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\cat.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="res\game.ico">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\gummy.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\Line.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\pen.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\potatoes.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\student-boy.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\student-girl.png">
+      <Filter>resource</Filter>
+    </Image>
+    <Image Include="..\Resources\teacher.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Resources\watermelon.json">
       <Filter>resource</Filter>
     </None>
-    <None Include="..\Resources\BookItem.json" />
+    <None Include="..\Resources\Bag.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\BookItem.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Candy.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Cat.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Gummy.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Pen.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Potatoes.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\StudentBoy.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\StudentGirl.json">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\Teacher.json">
+      <Filter>resource</Filter>
+    </None>
   </ItemGroup>
 </Project>

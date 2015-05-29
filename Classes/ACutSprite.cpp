@@ -98,15 +98,13 @@ void ACutSprite::clip()
 {
 	if (_deleted == true)
 		return;
-	CCLOG("%s - %i","Slice Obj Detected !  - ", this);
 	_deleted = true;
 	if (this->getLocalZOrder() == z_Order_SpriteBomb)
 	{
-			CCLOG("%s - %i","BOMB CUT  - ", this);
 		LoseLife(1);
 	}
 	else
-		Addpoints(this->_pointValue);
+		Addpoints(5);
 	this->setOpacity(0);
 	this->setLocalZOrder(z_Order_SpriteCut);
 	auto body = this->getPhysicsBody();

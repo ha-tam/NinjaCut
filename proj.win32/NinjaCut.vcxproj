@@ -186,12 +186,31 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ResourceCompile Include="game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Resources\bag.png" />
     <Image Include="..\Resources\book.png" />
+    <Image Include="..\Resources\candy.png" />
+    <Image Include="..\Resources\cat.png" />
+    <Image Include="..\Resources\gummy.png" />
+    <Image Include="..\Resources\Line.png" />
+    <Image Include="..\Resources\pen.png" />
+    <Image Include="..\Resources\potatoes.png" />
+    <Image Include="..\Resources\student-boy.png" />
+    <Image Include="..\Resources\student-girl.png" />
+    <Image Include="..\Resources\teacher.png" />
     <Image Include="..\Resources\watermelon.png" />
     <Image Include="res\game.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Resources\Bag.json" />
     <None Include="..\Resources\BookItem.json" />
+    <None Include="..\Resources\Candy.json" />
+    <None Include="..\Resources\Cat.json" />
+    <None Include="..\Resources\Gummy.json" />
+    <None Include="..\Resources\Pen.json" />
+    <None Include="..\Resources\Potatoes.json" />
+    <None Include="..\Resources\StudentBoy.json" />
+    <None Include="..\Resources\StudentGirl.json" />
+    <None Include="..\Resources\Teacher.json" />
     <None Include="..\Resources\watermelon.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

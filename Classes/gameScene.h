@@ -29,7 +29,11 @@ public:
     void onTouchMoved(Touch *touch, Event *event);
 
 private:
-    int		_sliceTag;
+	int m_iCount;
+	void resetMotionStreak();
+	void addMotionStreakPoint(Point point);
+private:
+	int		_sliceTag;
 	Point	_sprite_size;
 	Scene	*_scene;
 	int		_score;
