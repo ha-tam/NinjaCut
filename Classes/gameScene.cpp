@@ -81,14 +81,16 @@ void gameLayer::onEnter()
 	touchListener->onTouchBegan = CC_CALLBACK_2(gameLayer::onTouchBegan, this);
 	touchListener->onTouchMoved = CC_CALLBACK_2(gameLayer::onTouchMoved, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+    MotionStreak* streak = MotionStreak::create(0.5f, 1, 10, Color3B(255, 255, 0), "Line.png");
+    this->addChild(streak, 5, MOTION_STREAK_TAG);
 	scheduleUpdate();
 }
 
 
-void gameLayer::resetMotionStreak() {
-    this->removeChildByTag(MOTION_STREAK_TAG, true);
-    MotionStreak* streak = MotionStreak::create(0.5f, 1, 10, Color3B(255, 255, 0), "line.png");
-    this->addChild(streak, 5, MOTION_STREAK_TAG);
+void gameLayer::resetMotionStreak()
+{
+    MotionStreak* streak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
+	streak->reset();
 }
 
 void gameLayer::addMotionStreakPoint(cocos2d::Point point) {
