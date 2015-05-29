@@ -47,3 +47,4 @@ Temporary Items
 *.obj
 cocos2d/cocos/2d/*
 proj.android/*
+proj.win32/NinjaCut.opensdf

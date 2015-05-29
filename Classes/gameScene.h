@@ -24,7 +24,7 @@ public:
 	void	throwItem();
 	void	throwWave();
 	ACutSprite	*getRandomItem();
-	void nodeUnderTouch(cocos2d::Touch *touch);
+	void nodeUnderTouch(Touch *touch);
     bool onTouchBegan(Touch *touch, Event *event);
     void onTouchMoved(Touch *touch, Event *event);
 

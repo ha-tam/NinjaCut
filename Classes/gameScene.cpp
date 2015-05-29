@@ -46,7 +46,7 @@ void gameLayer::onEnter()
 	_ticTimeLimit = 2;
 	_waveSize = 10;
 	m_iCount = 0;
-	MotionStreak::create(0.5f, 1, 10, ccc3(255,255,0), "Line.png");
+	MotionStreak::create(0.5f, 1, 10, Color3B(255,255,0), "Line.png");
 	auto bg = Sprite::create("bg.png");
 	bg->setAnchorPoint(Point(1, 1));
 	bg->setPosition(Point(1280, 720));
@@ -77,11 +77,11 @@ void gameLayer::onEnter()
 
 void gameLayer::resetMotionStreak() {
     this->removeChildByTag(MOTION_STREAK_TAG, true);
-    CCMotionStreak* streak = MotionStreak::create(0.5f, 1, 10, ccc3(255, 255, 0), "line.png");
+    MotionStreak* streak = MotionStreak::create(0.5f, 1, 10, Color3B(255, 255, 0), "line.png");
     this->addChild(streak, 5, MOTION_STREAK_TAG);
 }
 
-void gameLayer::addMotionStreakPoint(cocos2d::CCPoint point) {
+void gameLayer::addMotionStreakPoint(cocos2d::Point point) {
     MotionStreak* streak = (MotionStreak*)this->getChildByTag(MOTION_STREAK_TAG);
     streak->setPosition(point);
     
@@ -89,7 +89,7 @@ void gameLayer::addMotionStreakPoint(cocos2d::CCPoint point) {
         int r = rand()%256;
         int b = rand()%265;
         int g = rand()%256;
-        streak->setColor(ccc3(r, b, g));
+        streak->setColor(Color3B(r, b, g));
         m_iCount = 0;
     }
 }
@@ -175,9 +175,9 @@ void	gameLayer::modifScore(int ScoreModifier)
 	std::stringstream  label;
 	label << "Score : " << _score;
 	_scoreLabel->setString(label.str());
-	if (_score >= 0)
+	if (_score <= 0)
 	{
-		CCLOG("%s", "END GAME");
+		CCLOG("%s", "END GAME BY SCORE");
 		//Trigger END GAME
 	}
 }
@@ -192,9 +192,9 @@ void	gameLayer::loseLife(int lose)
 	_lifeLabel->setString(label.str());
 
 	CCLOG("Life : %i, lost : %i", _life, lose);
-	if (_life == 0)
+	if (_life <= 0)
 	{
-		CCLOG("%s", "END GAME");
+		CCLOG("%s", "END GAME BY LIFE");
 		//Trigger END GAME
 	}
 }
