@@ -44,8 +44,8 @@ void gameLayer::onEnter()
 	_score = 100;
 	_life = 5;
 	_ticClock = 0;
-	_ticTimeLimit = 4;
-	_waveSize = 3+rand()%5;
+	_ticTimeLimit = 2;
+	_waveSize = 6;
 
 	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
 	audio->preloadBackgroundMusic("macicbg.wav");
