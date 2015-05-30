@@ -14,6 +14,7 @@
 #include "zOrder.h"
 #include <sstream>
 #include "SimpleAudioEngine.h"
+#include "Menu.h"
 USING_NS_CC;
 
 #define MOTION_STREAK_TAG 4242
@@ -26,7 +27,6 @@ Scene* gameLayer::createScene()
     auto scene = Scene::createWithPhysics();
     //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     scene->getPhysicsWorld()->setGravity(Point(0, -250));
-    auto test = new ACutSprite();
     auto layer = gameLayer::create();
     layer->SetPhysicsWorld(scene->getPhysicsWorld());
 
@@ -48,13 +48,7 @@ void gameLayer::onEnter()
 	_waveSize = 6;
 
 	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-	audio->preloadBackgroundMusic("macicbg.wav");
-	audio->preloadEffect("cut01.mp3");
-	audio->preloadEffect("argh.wav");
-	audio->preloadEffect("kya.wav");
-	// set the background music and continuously play it.
-	audio->playBackgroundMusic("macicbg.wav", true);
-	audio->setBackgroundMusicVolume(0.3);
+	audio->playEffect("rdygo.wav", false, 1.0f, 1.0f, 1.0f);
 	m_iCount = 0;
 	MotionStreak::create(0.5f, 1, 10, Color3B(255,255,0), "Line.png");
 	auto bg = Sprite::create("bg.png");
@@ -62,13 +56,13 @@ void gameLayer::onEnter()
 	bg->setPosition(Point(1280, 720));
 	addChild(bg);
 
-	_scoreLabel = Label::createWithSystemFont("Score : 0", "Arial", 76);
+	_scoreLabel = Label::createWithTTF(TTFConfig("Marker Felt.ttf",76), "Score : 100");
 	_scoreLabel->enableShadow();
 	_scoreLabel->setAnchorPoint(Point(1, 1));
 	_scoreLabel->setPosition(Point(1260, 720));
 	addChild(_scoreLabel, z_Order_UI);
 
-	_lifeLabel = Label::createWithSystemFont("Life : 5", "Arial", 76);
+	_lifeLabel = Label::createWithTTF(TTFConfig("Marker Felt.ttf",76), "Life : 5");
 	_lifeLabel->enableShadow();
 	_lifeLabel->setAnchorPoint(Point(0, 1));
 	_lifeLabel->setPosition(Point(0, 720));
@@ -180,7 +174,19 @@ void	gameLayer::add_child(Node* node)
 {
 	addChild(node);
 }
-
+void	endGame(int _score)
+{
+	UserDefault *def = UserDefault::getInstance();
+    auto highScore = def->getIntegerForKey(__STR_HIGHSCORE, 0);
+	if (_score > highScore)
+    {
+        highScore = _score;
+        def->setIntegerForKey(__STR_HIGHSCORE, highScore);
+    }
+    def->flush();
+	auto scene = gameMenu::createScene(_score);
+	Director::getInstance()->replaceScene(TransitionMoveInR::create(1, scene));
+}
 void	gameLayer::modifScore(int ScoreModifier)
 {
 	_score += ScoreModifier;
@@ -189,7 +195,7 @@ void	gameLayer::modifScore(int ScoreModifier)
 	_scoreLabel->setString(label.str());
 	if (_score <= 0)
 	{
-		CCLOG("%s", "END GAME BY SCORE");
+		endGame(_score);
 		//Trigger END GAME
 	}
 }
@@ -203,10 +209,9 @@ void	gameLayer::loseLife(int lose)
 	label << "Life : " << _life;
 	_lifeLabel->setString(label.str());
 
-	CCLOG("Life : %i, lost : %i", _life, lose);
 	if (_life <= 0)
 	{
-		CCLOG("%s", "END GAME BY LIFE");
+		endGame(_score);
 		//Trigger END GAME
 	}
 }

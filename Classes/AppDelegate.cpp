@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "gameScene.h"
+#include "Menu.h"
 #include "SimpleAudioEngine.h"
 // is the game landscape or portrait (true for landscape and false for portrait)
 #define IS_LANDSCAPE true
@@ -31,9 +32,18 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = gameLayer::createScene();
+	auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+	audio->preloadBackgroundMusic("macicbg.wav");
+	audio->preloadEffect("cut01.mp3");
+	audio->preloadEffect("argh.wav");
+	audio->preloadEffect("kya.wav");
+	audio->preloadEffect("rdygo.wav");
+	audio->playBackgroundMusic("macicbg.wav", true);
+	audio->setBackgroundMusicVolume(0.3);
 
     // run
+    //auto scene = gameLayer::createScene();
+    auto scene = gameMenu::createScene(0);
     director->runWithScene(scene);
     
     return true;

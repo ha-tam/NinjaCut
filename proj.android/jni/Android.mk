@@ -21,6 +21,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/Potatoes.cpp \
                    ../../Classes/StudentBoy.cpp \
                    ../../Classes/StudentGirl.cpp \
+                   ../../Classes/Menu.cpp \
                    ../../Classes/Teacher.cpp
 				   
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes

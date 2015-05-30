@@ -51,7 +51,9 @@ void ACutSprite::initOptions(PhysicsWorld* physicsWorld,
 		this->getPhysicsBody()->setContactTestBitmask(0x08); // 1000
 		this->getPhysicsBody()->setCollisionBitmask(0x01);   // 0001
 
-		auto rd = rand()%6;
+		static int rd = 0;
+		if (++rd >= 6)
+			rd = 0;
 		initPos(e_SpritePath(rd));
     }
 }

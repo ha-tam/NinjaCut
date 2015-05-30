@@ -63,6 +63,9 @@
     <ClCompile Include="..\Classes\Pen.cpp">
       <Filter>Classes\ObjCut</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Menu.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Gummy.h">
       <Filter>Classes\ObjCut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Menu.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
